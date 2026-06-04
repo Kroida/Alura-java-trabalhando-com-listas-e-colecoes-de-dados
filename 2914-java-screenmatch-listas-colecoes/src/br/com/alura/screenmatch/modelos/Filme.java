@@ -17,4 +17,10 @@ public class Filme extends Titulo implements Classificavel {
     public int getClassificacao() {
         return (int) pegaMedia() / 2;
     }
+
+    // Método parar formatar to.String da listaDeFilmes
+    @Override
+    public String toString() {
+        return "Filme: " + this.getNome() + "(" + this.getAnoDeLancamento() + ")";
+    }
 }
