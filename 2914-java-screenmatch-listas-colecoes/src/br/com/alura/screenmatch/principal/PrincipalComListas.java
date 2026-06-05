@@ -6,6 +6,7 @@ import br.com.alura.screenmatch.modelos.Titulo;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Comparator;
 
 public class PrincipalComListas {
     static void main(String[] args) {
@@ -41,6 +42,10 @@ public class PrincipalComListas {
         System.out.println(buscaPorArtista);
         System.out.println("Lista de titulos ordenadas");
         Collections.sort(lista);
+        System.out.println(lista);
+        // Comparando por ano de lançamento
+        lista.sort(Comparator.comparing(Titulo::getAnoDeLancamento));
+        System.out.println("Ordenando por ano");
         System.out.println(lista);
     }
 }
