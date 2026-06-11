@@ -1,16 +1,95 @@
-![thumbnail-Formação Java (3)](https://user-images.githubusercontent.com/66698429/226652162-77d758f2-3d34-4f6d-bb9b-37b3c00d0759.png)
+# ScreenMatch - Listas e Coleções
 
+Projeto de gerenciamento de catálogo de filmes e séries, demonstrando o uso de listas e coleções em Java.
 
-# Java: trabalhando com listas e coleções de dados
+## 📋 Descrição
 
-Projeto desenvolvido no terceiro curso da formação Java da Alura
+Este projeto é uma aplicação de gerenciamento de catálogo audiovisual (ScreenMatch) que implementa conceitos avançados de listas e coleções em Java, incluindo ArrayList, LinkedList, ordenação e polimorfismo.
 
+## 🏗️ Estrutura do Projeto
 
-## 🔨 Objetivos do projeto
+```
+src/
+└── br/
+    └── com/
+        └── alura/
+            └── screenmatch/
+                ├── calculos/
+                │   ├── CalculadoraDeTempo.java
+                │   ├── Classificavel.java
+                │   └── FiltroRecomendacao.java
+                ├── modelos/
+                │   ├── Episodio.java
+                │   ├── Filme.java
+                │   ├── Serie.java
+                │   └── Titulo.java
+                └── principal/
+                    ├── Principal.java
+                    └── PrincipalComListas.java
+```
 
-- Mergulhar mais profundamente em Java, entendendo a hierarquia de classes e métodos;
-- Aprender a representar uma lista de objetos; 
-- Conhecer os recursos para manipulação dessa lista, como inclusão, exclusão, ordenação;
-- Fazer casting de objetos e identificar o tipo dos mesmo;
-- Construir os objetos já com valores e com diferentes critérios;
-- Avançar nos estudos e entender novos conceitos primordiais para o desenvolvimento de aplicações back-end.
+## 🎯 Funcionalidades
+
+### Classes Principais
+
+- **Titulo**: Classe base para títulos audiovisuais com avaliação e metadados
+- **Filme**: Extende Titulo, representa filmes com diretor e classificação
+- **Serie**: Extende Titulo, representa séries com temporadas e episódios
+- **Episodio**: Representa episódios individuais de séries
+
+### Utilitários
+
+- **CalculadoraDeTempo**: Calcula tempo total de maratona
+- **FiltroRecomendacao**: Filtra conteúdo baseado em classificação
+- **Classificavel**: Interface para classificação de conteúdo
+
+## 🚀 Conceitos Demonstrados
+
+- **ArrayList**: Armazenamento dinâmico de filmes e séries
+- **LinkedList**: Lista encadeada para títulos
+- **Ordenação**: Uso de Collections.sort() e Comparator
+- **Polimorfismo**: Uso de interfaces e herança
+- **Comparable**: Implementação de ordenação customizada
+- **instanceof**: Verificação de tipos em tempo de execução
+- **Streams API**: Processamento de coleções
+
+## 📝 Exemplos de Uso
+
+### Principal.java
+```java
+// Criação e gerenciamento de filmes
+Filme meuFilme = new Filme("O poderoso chefão", 1970);
+meuFilme.setDuracaoEmMinutos(180);
+meuFilme.avalia(8);
+
+// Uso de ArrayList
+ArrayList<Filme> listaDeFilmes = new ArrayList<>();
+listaDeFilmes.add(meuFilme);
+```
+
+### PrincipalComListas.java
+```java
+// Polimorfismo com List<Titulo>
+List<Titulo> lista = new LinkedList<>();
+lista.add(filmeDoPaulo);
+lista.add(lost);
+
+// Ordenação customizada
+Collections.sort(lista);
+lista.sort(Comparator.comparing(Titulo::getAnoDeLancamento));
+```
+
+## 🔧 Tecnologias
+
+- Java
+- Collections Framework (ArrayList, LinkedList)
+- Interfaces (Comparable, Classificavel)
+- Herança e Polimorfismo
+
+## 📚 Conceitos Aprendidos
+
+Este projeto faz parte do curso "Java: Trabalhando com Listas e Coleções de Dados" da Alura, abordando:
+- Estruturas de dados em Java
+- Collections Framework
+- Ordenação e comparação de objetos
+- Boas práticas de programação orientada a objetos
